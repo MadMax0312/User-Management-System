@@ -1,0 +1,36 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="profile-container">
+  <div class="centered-content">
+    <div class="profile-image">
+      <img src="userImages/<%= user.image %>" width="100px" height="100px" alt="User Image">
+    </div>
+    <div class="profile-form">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="image">Profile Image</label>
+          <input type="file" id="image" name="image">
+          <input type="hidden" name="user_id" value="<%= user._id %>">
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" value="<%= user.name %>" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" value="<%= user.email %>" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="mno">Mobile Number</label>
+          <input type="text" id="mno" name="mno" value="<%= user.mobile %>" placeholder="Enter your number">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Update Profile">
+        </div>
+        <a href="/login" style="color: blueviolet;">Back</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

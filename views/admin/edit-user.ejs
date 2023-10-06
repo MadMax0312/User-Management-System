@@ -1,0 +1,42 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="login-page">
+  <div class="form">
+
+    <h2 class="head">Edit User</h2>
+
+    <form action="" method="post" class="login-form">
+      <!-- <div class="input-container">
+        <input type="name" name="name" placeholder="Enter your username" required>
+      </div> -->
+      <div class="input-container">
+        <input type="name" name="name" placeholder="Enter name" value="<%= user.name %>" required>
+      </div>
+      <div class="input-container">
+        <input type="email" name="email" placeholder="Enter email" value="<%= user.email %>" required>
+      </div>
+      <div class="input-container">
+        <input type="text" name="mno" placeholder="Enter Mobile number" value="<%= user.mobile %>" required>
+      </div>
+      <div class="input-container">
+        <label for="">Verified</label>
+        <input type="radio" name="verify" value="1" <% if(user.is_verified == 1){%> checked <%}%>>
+      </div>
+      <div class="input-container">
+        <label for="">Unverified</label>
+        <input type="radio" name="verify" value="0" <% if(user.is_verified == 0){%> checked <%}%>>
+      </div>
+      <div class="input-container">
+        <input type="hidden" name="id" value="<%= user._id %>">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Update Profile">
+      </div>
+      <br>
+      <!-- <button class="logout-button" style="background-color: #007bff; color: #fff;"><a href="/admin/home" style="text-decoration: none; color: inherit;">Edit User</a></button> -->
+      <a href="/admin/" style=" color: red;">Go to Dashboard</a>
+    </form>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

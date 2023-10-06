@@ -1,0 +1,45 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="login-page">
+  <div class="form">
+    <h2 class="head">Registration</h2>
+
+    <form action="" method="POST" class="login-form" enctype="multipart/form-data">
+      <div class="input-container">
+        <label for="name">Username</label>
+        <input type="name" name="name" placeholder="Enter your username" required>
+      </div>
+      <div class="input-container">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-container">
+        <label for="mno">Mobile Number</label>
+        <input type="mno" name="mno" placeholder="Enter your mobile number" required>
+      </div>
+      <div class="input-container">
+        <label for="file">Upload Profile Photo</label>
+        <input type="file" name="image" required>
+      </div>
+      <div class="input-container">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" value="Register" class="btn btn-danger">Register</button>
+    </form>
+    <%
+
+if(typeof message !== 'undefined'){
+  %>
+    <p style="color:red"><%= message %></p>
+  <%
+}
+
+%>
+
+<%- include('../layouts/footer.ejs') %>
+  </div>
+</div>
+
+
+

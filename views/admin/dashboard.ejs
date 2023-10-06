@@ -1,0 +1,97 @@
+
+<%- include('../layouts/header.ejs') %>
+
+<div class="centered-content">
+
+  <h1>Dashboard</h1>
+
+  <a href="/admin/new-user">Add New User</a>
+
+  <br>
+
+  <form style="margin-top: 20px; text-align: center;">
+    <input type="text" name="search" placeholder="Search User name, email, mobile" style="padding: 5px; width: 300px; border: none;">
+    <input type="submit" value="Search" style="padding: 5px; background-color: #007bff; color: #fff;border: none;">
+</form>
+
+
+  <table class="user-info-table">
+
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Image</th>
+      <th>Verified</th>
+      <th>Actions</th>
+    </tr>
+
+    <% if(users.length > 0){
+
+      for(let i=0; i<users.length; i++){
+        %>
+        <tr>
+
+          <td><%= users[i].name %></td>
+          <td><%= users[i].email %></td>
+          <td><%= users[i].mobile %></td>
+          <td><img src="/userImages/<%= users[i].image %>" alt="UserImage" width="50px" height="50px"></td>
+          <td><% 
+            if(users[i].is_verified == 0){
+              %>
+                <p>Not Verifiied</p>
+              <%
+
+            }else{
+            %>
+              <p>Verified</p>
+            <%
+          }
+          %>
+        </td>
+
+        <td>
+
+          <a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a>
+          
+
+        </td>
+
+        </tr>
+        <%
+      }
+
+    }else{
+      %>
+        <tr>
+          <td colspan="5">Users Not Found</td>
+        </tr>
+      <%
+    }
+    %>
+
+  </table>
+  <br>
+
+<!-- ------------Adding Pagination -------------- -->
+
+  <div class="pagination-container">
+    <%
+    for(let j=1; j <= totalPages; j++){
+      %>
+      <a href="?page=<%= j %>"><%= j%></a>
+      <%
+    } 
+    %>
+    
+  </div>
+
+  <!-- ------------------------------------------------------- -->
+
+  <br>
+
+  <button class="logout-button" style="background-color: #007bff; color: #fff;"><a href="/admin/home" style="text-decoration: none; color: inherit;">Go to Home</a></button>
+
+</div>
+
+<%- include('../layouts/footer.ejs') %>

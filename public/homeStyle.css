@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300:400:500:600);
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, 
+  rgba(118,184,82,1) 50%);   
+}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.head {
+  margin-top: 0;
+  font-size: 35px;
+  color: grey;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.input-container {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+/* -------edit ejs Csss------ */
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-form {
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Arrange form elements vertically */
+  align-items: center; 
+  margin: 10px 0; 
+}
+
+.form-group label {
+  margin-bottom: 5px; 
+}
+
+.form-group input {
+  width: 100%; 
+  padding: 10px; 
+  margin-top: 5px; 
+}
+
+.form-group input[type="file"] {
+  width: auto; 
+}
+
+.form-group input[type="file"]:hover {
+  cursor: pointer;
+}
+
+.form-group input[type="submit"] {
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #0056b3 !important;
+}

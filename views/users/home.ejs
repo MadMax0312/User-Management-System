@@ -1,0 +1,42 @@
+<%- include('../layouts/header.ejs') %>
+
+<div class="centered-content">
+  <h1>Welcome, <%= user.name %></h1>
+
+  <table class="user-info-table">
+    <tr>
+      <td><%= user.name %></td>
+      <td><img src="userImages/<%= user.image %>" width="100px" height="100px" alt="User Image"></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><%= user.email %></td>
+    </tr>
+    <tr>
+      <td>Mobile Number</td>
+      <td><%= user.mobile %></td>
+    </tr>
+    <tr>
+      <td>Verified</td>
+      <td>
+        <% if(user.is_verified == 1){
+          %>
+            <p>True</p>
+          <%
+        }
+        %>
+      </td>
+    </tr>
+  </table>
+
+  <br><br>
+
+  <a href="/edit?id=<%= user._id %>">Edit Profile</a>
+
+  <br><br>
+
+  <button class="logout-button" style="background-color: #007bff; color: #fff;"><a href="/logout" style="text-decoration: none; color: inherit;">Logout</a></button>
+
+</div>
+
+<%- include('../layouts/footer.ejs') %>
