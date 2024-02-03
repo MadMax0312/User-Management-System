@@ -27,8 +27,8 @@ const addUserMail = async(name, email, password, user_id)=>{
       secure:false,
       requireTLS:true,
       auth:{
-        user:'thahirmuhammedap@gmail.com',
-        pass:'hpey gbkn ncbk yrju'
+        user:'*****',
+        pass:'*****'
       }
     })
     const mailOptions = {
